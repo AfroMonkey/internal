@@ -7,3 +7,6 @@ class ProjectTask(models.Model):
     repo = fields.Char()
     branch = fields.Char()
     pull_request = fields.Char()
+    sprint_id = fields.Many2one(
+        comodel_name="project.sprint",
+    )

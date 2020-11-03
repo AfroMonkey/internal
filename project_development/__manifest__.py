@@ -9,6 +9,7 @@
     ],
     "data": [
         # security
+        "security/ir.model.access.csv",  # TODO
         # data
         # reports
         # views

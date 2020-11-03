@@ -8,7 +8,7 @@
             <div class="oe_title">
                 <sheet>
                     <group>
-                        <field name="endpoint" widget="url"/>
+                        <field name="domain" widget="url"/>
                         <field name="odoo_version"/>
                         <field name="master_repo" widget="url"/>
                     </group>
