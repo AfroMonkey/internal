@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <record id="project_sprint_view_tree" model="ir.ui.view">
+        <field name="name">project.sprint.view.tree</field>
+        <field name="model">project.sprint</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="start"/>
+                <field name="end"/>
+                <field name="planned_hours" widget="float_time"/>
+            </tree>
+        </field>
+    </record>
+
+    <record id="project_sprint_view_form" model="ir.ui.view">
+        <field name="name">project.sprint.view.form</field>
+        <field name="model">project.sprint</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <h1>
+                        <field name="name"/>
+                    </h1>
+                    <div class="o_row">
+                        <field name="start" widget="daterange" options="{'related_end_date': 'end'}"/>
+                        <i class="fa fa-long-arrow-right mx-2" aria-label="Arrow icon" title="Arrow"/>
+                        <field name="end" widget="daterange" options="{'related_start_date': 'start'}"/>
+                    </div>
+                    <notebook>
+                        <page string="Tasks" name="tasks">
+                            <field name="task_ids"/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="project_sprint_action" model="ir.actions.act_window">
+        <field name="name">Sprints</field>
+        <field name="res_model">project.sprint</field>
+        <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem id="project_sprint_menu"
+        parent="project.menu_main_pm"
+        name="Sprints"
+        sequence="3"
+        action="project_sprint_action"
+    />
+</odoo>

@@ -13,7 +13,8 @@
         # data
         # reports
         # views
-        "views/project_task.xml",
         "views/project_project.xml",
+        "views/project_sprint.xml",
+        "views/project_task.xml",
     ],
 }
