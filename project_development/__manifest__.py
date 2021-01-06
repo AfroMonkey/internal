@@ -1,7 +1,7 @@
 {
     "name": "Project Development",
     "version": "13.0.0.1.0",
-    "author": "HomebrewSoft",
+    "author": "HomebrewSoft, Odoo Community Association (OCA)",
     "website": "https://homebrewsoft.dev",
     "license": "LGPL-3",
     "depends": [

@@ -23,8 +23,9 @@ class ProjectSprint(models.Model):
 
     @api.depends("start")
     def _compute_name(self):
+        # TODO name depends on periodicy, actually weekly
         for sprint in self:
-            sprint.name = f"S{sprint.start.year}W{sprint.start.isocalendar()[1]}"  # TODO name depends on periodicy, actually weekly
+            sprint.name = f"S{sprint.start.year}W{sprint.start.isocalendar()[1]}"
 
     @api.depends("task_ids")
     def _compute_planned_hours(self):
